@@ -1,9 +1,19 @@
 # https://cloud.google.com/compute/docs/load-balancing/http/content-based-example
 
+
+terraform {
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+      version = "5.16.0"
+    }
+  }
+}
+
 provider "google" {
   region      = var.region
   project     = var.project_name
-  credentials = file(var.credentials_file_path)
+  #credentials = file(var.credentials_file_path)
   zone        = var.region_zone
 }
 
